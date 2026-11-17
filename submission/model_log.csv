@@ -1,1 +1,5 @@
 run_id,part,model,params,split,n_boxes,sec_per_img,what_went_right,what_went_wrong,decision
+run_01,part2,yolo26,size=n conf=0.25,pilot,85,0.08,Phat hien tot person va car ro rang,Goi tuk-tuk va xe ba gac la car hoac truck,Ha nguong hoac dung YOLOE cho three_wheeler
+run_02,part2,yolo26,size=n conf=0.50,pilot,54,0.08,It false positive giam nhieu box thua,Bo sot nhieu xe may o xa va nguoi di bo bi che khuat,Khong dung nguong cao cho toan bo cac lop
+run_03,part2,yoloe,classes=three_wheeler conf=0.25,pilot,12,0.15,Nhan dien dung ba gac va tuk-tuk ma COCO khong biet,Box co xu huong bi rong va long quanh than xe,Gop vao prelabel voi nguong 0.15 va IOU filter
+run_04,part2,sam,sam=sam2.1_t.pt conf=0.30 segmenter=sam,pilot,28,0.22,Tao mask bao quanh xe rat chi tiet va chinh xac,Doi khi tinh ca nguoi lai vao mask cua xe ba banh,Can click am de tach nguoi lai va than xe
