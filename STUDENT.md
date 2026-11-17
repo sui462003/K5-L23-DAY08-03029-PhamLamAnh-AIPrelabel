@@ -1,11 +1,11 @@
 # Thông tin học viên
 
-- Họ và tên: Phạm Lam Anh
+- Họ và tên: Phạm Lâm Anh
 - MSHV: 03029
 - Lớp (L2 / L3 / khác): L23
 - Tài khoản GitHub: sui462003
 - Repo bài nộp (URL): https://github.com/sui462003/K5-L23-DAY08-03029-PhamLamAnh-AIPrelabel
-- Commit chốt bài (hash): 8806e36
+- Commit chốt bài (hash): 562affc
 - Máy: Windows 11, GPU NVIDIA GeForce RTX 3050 Laptop (4GB)
 - CVAT (Docker): v2.74.1
 

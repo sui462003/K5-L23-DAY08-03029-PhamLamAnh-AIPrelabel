@@ -1,4 +1,4 @@
-# Label contract — Phố châu Á — BỔ SUNG v1.1 — 03029 - Phạm Lam Anh
+# Label contract — Phố châu Á — BỔ SUNG v1.1 — 03029 - Phạm Lâm Anh
 
 > **Bản bổ sung v1.1 so với v1.0:** Làm rõ các câu hỏi mở và chuẩn hoá các ca khó phát sinh từ lỗi nhận diện của máy (YOLO26, YOLOE), bẫy lọt và phản hồi từ thực tế gán nhãn.
 

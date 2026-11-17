@@ -1,4 +1,4 @@
-# Báo cáo Day 08 — 03029 - Phạm Lam Anh
+# Báo cáo Day 08 — 03029 - Phạm Lâm Anh
 
 > Một file duy nhất cho cả bài (đã gộp recipe, QC và ghi chú cá nhân). Mọi con số kèm **mẫu số** và nguồn (file nào). Viết bằng lời của bạn.
 
