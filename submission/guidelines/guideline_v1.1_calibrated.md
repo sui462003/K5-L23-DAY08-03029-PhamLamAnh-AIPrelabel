@@ -1,23 +1,24 @@
-# Label contract — Phố châu Á — BỔ SUNG v1.1 — <<MSHV - Họ tên>>
+# Label contract — Phố châu Á — BỔ SUNG v1.1 — 03029 - Phạm Lam Anh
 
-> **Chỉ viết phần thay đổi so với v1.0** (không copy cả file). Chốt các câu hỏi mở ở mục 6 của v1.0 (hoặc nói rõ câu nào chưa chốt, vì sao)
-> và thêm quy tắc mới rút ra từ lỗi của máy / lỗi của bạn. Mỗi ca khó **có ảnh ví dụ** (`img_0xx`) và khớp một dòng trong `qc/calibration_decisions.csv`.
+> **Bản bổ sung v1.1 so với v1.0:** Làm rõ các câu hỏi mở và chuẩn hoá các ca khó phát sinh từ lỗi nhận diện của máy (YOLO26, YOLOE), bẫy lọt và phản hồi từ thực tế gán nhãn.
 
 ## 1. Câu hỏi mở đã chốt (từ mục 6 của v1.0)
 
 | # | Câu hỏi | Quyết định | Ảnh ví dụ | `case_id` |
 |---|---|---|---|---|
-| <<1>> | <<xe đạp điện: bicycle hay motorbike?>> | <<>> | <<img_0xx>> | <<CAL-01>> |
+| 1 | Xe đạp điện, xe máy điện: phân loại vào `bicycle` hay `motorbike`? | Xe máy điện có kết cấu khung xe máy (không bàn đạp) xếp vào `motorbike`. Xe đạp điện có bàn đạp trợ lực xếp vào `bicycle`. | `img_013.jpg` | CAL-02 |
+| 2 | Xe ba gác, tuk-tuk, xích lô có chở hàng cồng kềnh thì box tính thế nào? | Box bao gồm cả xe và toàn bộ phần hàng hoá gắn liền trên xe, không tách rời hàng. | `img_004.jpg` | CAL-01 |
 
-## 2. Ca khó mới (từ lỗi của máy, bẫy lọt, box `can_review`)
+## 2. Ca khó mới từ lỗi máy và bẫy phát sinh
 
 | Ảnh | Tình huống | Máy làm gì (model nào) | Quyết định của bạn | Quy tắc mới (vào mục nào của v1.0) |
 |---|---|---|---|---|
-| <<img_0xx>> | <<>> | <<>> | <<>> | <<>> |
+| `img_004.jpg` | Xe tuk-tuk và xe ba gác chở khách | YOLO26 nhận nhầm thành `car` hoặc `truck` | Sửa lại thành `three_wheeler` (sử dụng YOLOE để hỗ trợ phát hiện). | Mục 2.3: Tất cả xe 3 bánh cơ giới hoặc thô sơ đều thuộc `three_wheeler`. |
+| `img_018.jpg` | Cụm người và xe máy ở hậu cảnh xa (< 20px) | AI bỏ sót hoặc gán box rời rạc không chính xác | Không vẽ box đơn lẻ cho từng đối tượng dưới 20px; vẽ 1 box `ignore_region` bao phủ cả cụm. | Mục 3.1: Quy định ngưỡng kích thước tối thiểu và vùng bỏ qua (`ignore_region`). |
 
 ## 3. Lịch sử thay đổi
 
 | Phiên bản | Thay đổi | Lý do (ca nào, `case_id`) |
 |---|---|---|
-| v1.0 | Bản giảng viên | — |
-| v1.1 | <<tóm tắt các thay đổi ở mục 1–2>> | <<>> |
+| v1.0 | Bản guideline gốc của giảng viên | Khung quy tắc ban đầu |
+| v1.1 | Chốt phân loại xe điện; chuẩn hoá nhãn `three_wheeler` cho xe ba bánh; siết chặt quy tắc `ignore_region` cho vật < 20px. | CAL-01 (`img_004.jpg`), CAL-02 (`img_013.jpg`), CAL-03 (`img_018.jpg`) |

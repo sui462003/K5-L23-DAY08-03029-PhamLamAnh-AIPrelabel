@@ -1,1 +1,4 @@
 case_id,image,nguon,van_de,quyet_dinh,quy_tac_ghi_vao_guideline,phien_ban_guideline
+CAL-01,img_004.jpg,loi_may,YOLO26 nham tuk-tuk va xe ba gac thanh car/truck,Dung YOLOE voi prompt three_wheeler va gop box vao prelabel,Xe co 3 banh cho khach hoac hang deu gan nhan three_wheeler khong tinh la car hay truck,v1.1
+CAL-02,img_013.jpg,cau_hoi_mo,Xe dap dien va xe may dien gan nhan bicycle hay motorbike,Neu co dong co kieu xe tay ga gan motorbike xe tro luc dap gan bicycle,Xe co dong co dien dang xe may gan motorbike con xe tro luc dap gan bicycle,v1.1
+CAL-03,img_018.jpg,bay_lot,Bay missing person bi lot do kich thuoc vat qua nho o vung xa dong duc,Dung ignore_region cho cac vat nho hon 20px trong cum day,Khong ve box rieng le cho nguoi/xe < 20px ma dung ignore_region bao quanh cum,v1.1
